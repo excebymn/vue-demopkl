@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 //? import pages
-import HomeView from '../views/pages/homeView.vue'
-import AboutView from '../views/pages/aboutView.vue'
-import ContactView from '../views/pages/contactView.vue'
-import ServicesView from '../views/pages/servicesView.vue'
+import HomeView from '../views/pages/HomeView.vue'
+import AboutView from '../views/pages/AboutView.vue'
+import ContactView from '../views/pages/ContactView.vue'
+import ServicesView from '../views/pages/ServicesView.vue'
 
 //? add route pages
 const router = createRouter({
