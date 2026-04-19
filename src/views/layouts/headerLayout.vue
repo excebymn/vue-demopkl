@@ -1,13 +1,49 @@
 <template>
-    <div class="headleft">
-        <img id="logo" src="" alt="">
-        <a href="about.html">MAKNA CONSULTING</a>
-    </div>
-    <div class="headright">
-        <a href="index.html">home</a>
-        <a href="about.hmtl">about us</a>
-        <a href="services.html">services</a>
-        <a href="contact.html">contact</a>
-    </div>
-</template>
+  <header class="m-2 p-3">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded">
+      <div class="container-fluid"> <!--! ./ container-fluid -->
+        <!--? Logo  -->
+        <router-link class="navbar-brand text-capitalize" to="/">
+          <img src="" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+          makna consulting
+        </router-link>
+        <!--? Logo  -->
 
+        <div class="ms-auto me-2">
+          <!--? Responsive Button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--? Responsive Button -->
+
+          <!--? navigation button -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <router-link class="nav-link active text-capitalize" aria-current="page" to="/">home</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link active text-capitalize" aria-current="page" to="/services">services</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link active text-capitalize" aria-current="page" to="/about">about</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link active text-capitalize" aria-current="page" to="/contact">contact</router-link>
+              </li>
+            </ul>
+          </div>
+          <!--? navigation button -->
+        </div>
+      </div> <!--! ./ container-fluid -->
+    </nav>
+  </header>
+</template>
