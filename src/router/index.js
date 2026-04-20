@@ -15,28 +15,44 @@ const router = createRouter({
       path: '/',
       name: 'Home',
       component: HomeView,
+      meta: { title: 'Home' },
     },
     {
       path: '/about',
       name: 'about',
       component: AboutView,
+      meta: { title: 'About' },
     },
     {
       path: '/contact',
       name: 'contact',
       component: ContactView,
+      meta: { title: 'Contact' },
     },
     {
       path: '/services',
       name: 'services',
       component: ServicesView,
+      meta: { title: 'Our Service' },
     },
     {
       path: '/portofolio',
       name: 'portofolio',
       component: PortofolioView,
+      meta: { title: 'Portofolio' },
     },
   ],
+})
+
+//? update title for each page
+router.afterEach((to) => {
+  const CompanyName = 'Makna Computing'
+
+  if (!to.meta.title) {
+    document.title = `${CompanyName}`
+  } else {
+    document.title = `${CompanyName} - ${to.meta.title}`
+  }
 })
 
 //? export route page
