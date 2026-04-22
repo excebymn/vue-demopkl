@@ -1,69 +1,63 @@
 <script setup>
-import Logo from '@/assets/images/PrimaryLogo/Logo.png'
+// ===============================
+// IMPORT
+// ===============================
+import Logo from '/images/PrimaryLogo/Logo.png'
+
+// ===============================
+// NAV MENU (BIAR DINAMIS)
+// ===============================
+const menus = [
+  { name: 'home', path: '/' },
+  { name: 'services', path: '/services' },
+  { name: 'about', path: '/about' },
+  { name: 'contact', path: '/contact' },
+]
 </script>
 
 <template>
-  <header class="m-2 p-3 sticky-top">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded">
-      <div class="container-fluid">
-        <!--! ./ container-fluid -->
-        <!--? Logo  -->
-        <router-link class="navbar-brand text-capitalize" to="/">
-          <img :src="Logo" alt="Logo" height="30" class="d-inline-block align-text-top" />
-          makna consulting
-        </router-link>
-        <!--? Logo  -->
+  <header class="sticky-top shadow-sm bg-white">
+    <nav class="navbar navbar-expand-lg container">
+      <!-- ===============================
+           LOGO
+      =============================== -->
+      <router-link
+        class="navbar-brand fw-bold text-capitalize d-flex align-items-center gap-2"
+        to="/"
+      >
+        <img :src="Logo" alt="logo" height="32" />
+        makna consulting
+      </router-link>
 
-        <div class="ms-auto me-2">
-          <!--? Responsive Button -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!--? Responsive Button -->
+      <!-- ===============================
+           TOGGLE BUTTON (MOBILE)
+      =============================== -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <!--? navigation button -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <router-link class="nav-link active text-capitalize" aria-current="page" to="/"
-                  >home</router-link
-                >
-              </li>
-              <li class="nav-item">
-                <router-link
-                  class="nav-link active text-capitalize"
-                  aria-current="page"
-                  to="/services"
-                  >services</router-link
-                >
-              </li>
-              <li class="nav-item">
-                <router-link class="nav-link active text-capitalize" aria-current="page" to="/about"
-                  >about</router-link
-                >
-              </li>
-              <li class="nav-item">
-                <router-link
-                  class="nav-link active text-capitalize"
-                  aria-current="page"
-                  to="/contact"
-                  >contact</router-link
-                >
-              </li>
-            </ul>
-          </div>
-          <!--? navigation button -->
-        </div>
+      <!-- ===============================
+           MENU
+      =============================== -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- LOOP MENU -->
+          <li v-for="menu in menus" :key="menu.path" class="nav-item">
+            <router-link
+              :to="menu.path"
+              class="nav-link text-capitalize"
+              active-class="active fw-bold text-warning"
+            >
+              {{ menu.name }}
+            </router-link>
+          </li>
+        </ul>
       </div>
-      <!--! ./ container-fluid -->
     </nav>
   </header>
 </template>
