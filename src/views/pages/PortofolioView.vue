@@ -30,6 +30,10 @@ const projects = ref([
   }
 ])
 
+const images = ref(
+  Array.from({ length: 30 }, (_, i) => `/images/SecondaryLogo/${i + 1}.png`)
+)
+
 const activeFilter = ref('All')
 
 const categories = ['All', 'Training', 'Consulting', 'System']
@@ -115,14 +119,27 @@ const filteredProjects = () => {
 
     </div>
   </section>
-<h1>plis tambahin trust by disini bed</h1>
-<section class="container py-5">
+<section class="container py-4 bg-white">
   <div class="text-center mb-5">
     <h2 class="fw-bold">Dipercaya oleh Berbagai Instansi</h2>
     <p class="text-muted">
       Pengalaman kami mencakup berbagai sektor pemerintahan, BUMN, dan organisasi lainnya
     </p>
   </div>
+
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <div v-for="(img, i) in images" :key="'a'+i" class="marquee-item">
+        <img :src="img" />
+      </div>
+      <div v-for="(img, i) in images" :key="'b'+i" class="marquee-item">
+        <img :src="img" />
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container py-5">
+
 
   <div class="row g-4">
 
@@ -269,5 +286,35 @@ const filteredProjects = () => {
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
+
+.marquee-wrapper {
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  margin-right: 20px;
+}
+
+.marquee-item img {
+  height: 50px;
+}
+
+/* animation */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 </style>
+
+
 ```
