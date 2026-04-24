@@ -93,50 +93,8 @@ const prevSlide = () => {
         Solusi terpadu untuk meningkatkan kualitas SDM dan tata kelola organisasi
       </p>
     </div>
+</section>
 
-    <!-- VISI MISI -->
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-6">
-        <div class="card p-3 shadow h-100">
-          <h5 class="fw-bold text-center">Visi</h5>
-          <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Lorem ipsum dolor sit amet</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card p-3 shadow h-100">
-          <h5 class="fw-bold text-center">Misi</h5>
-          <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Lorem ipsum dolor sit amet</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===============================
-        TRUSTED CLIENT
-  =============================== -->
-  <section class="container py-4 bg-white">
-    <p class="text-center fw-semibold">Dipercaya oleh:</p>
-
-    <div class="marquee-wrapper">
-      <div class="marquee-track">
-        <div v-for="(img, i) in images" :key="'a'+i" class="marquee-item">
-          <img :src="img" />
-        </div>
-        <div v-for="(img, i) in images" :key="'b'+i" class="marquee-item">
-          <img :src="img" />
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ===============================
         SERVICES
@@ -163,6 +121,8 @@ const prevSlide = () => {
       </div>
     </div>
   </section>
+
+
 
   <!-- ===============================
         WHY US
@@ -194,6 +154,24 @@ const prevSlide = () => {
             <h5>Berorientasi Hasil</h5>
             <p class="text-muted">Fokus pada impact</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ===============================
+        TRUSTED CLIENT
+  =============================== -->
+  <section class="container py-4 bg-white">
+    <p class="text-center fw-semibold">Dipercaya oleh:</p>
+
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <div v-for="(img, i) in images" :key="'a'+i" class="marquee-item">
+          <img :src="img" />
+        </div>
+        <div v-for="(img, i) in images" :key="'b'+i" class="marquee-item">
+          <img :src="img" />
         </div>
       </div>
     </div>

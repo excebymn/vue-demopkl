@@ -84,7 +84,7 @@ const pages = [
          COPYRIGHT
     =============================== -->
     <div class="text-center py-3 border-top small">
-      © 2026 Makna Consulting — All Rights Reserved
+      © 2026 Makna Consulting — Developed by <router-link to="/Developer" style="color: lightblue;">Tim PKL SMK Negeri Mojoagung</router-link>
     </div>
 
   </footer>

@@ -11,7 +11,7 @@ const menus = [
   { name: 'home', path: '/' },
   { name: 'services', path: '/services' },
   { name: 'about', path: '/about' },
-  { name: 'contact', path: '/contact' },
+  { name: 'contact', path: '/contact' }
 ]
 </script>
 

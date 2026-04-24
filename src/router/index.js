@@ -6,6 +6,7 @@ import AboutView from '../views/pages/AboutView.vue'
 import ContactView from '../views/pages/ContactView.vue'
 import ServicesView from '../views/pages/ServicesView.vue'
 import PortofolioView from '@/views/pages/PortofolioView.vue'
+import DeveloperView from '@/views/pages/DeveloperView.vue'
 
 //? add route pages
 const router = createRouter({
@@ -40,6 +41,12 @@ const router = createRouter({
       name: 'portofolio',
       component: PortofolioView,
       meta: { title: 'Portofolio' },
+    },
+        {
+      path: '/developer',
+      name: 'developer',
+      component: DeveloperView,
+      meta: { title: 'Developer' },
     },
   ],
 })
