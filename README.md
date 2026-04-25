@@ -1,67 +1,178 @@
-# vue-demopkl
+Berikut versi README yang sudah disesuaikan dengan struktur folder kamu + tanpa screenshot + tetap GitHub-ready:
 
-This template should help get you started developing with Vue 3 in Vite.
+---
 
-## reference
+# 🚀 Makna Consulting Website
 
-index/home dan header 
-https://www.microsoft.com/id-id
-kita pakai filosofi simple tapi rapi nya
+![Vue](https://img.shields.io/badge/Vue-3-42b883?logo=vue.js)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Development-yellow)
 
-contact
-https://blog.dewaweb.com/wp-content/uploads/2024/12/halaman-contact-us-barnes-noble-768x394.jpg
-kita pakai konsep tiling nya biar rapi
+Website company profile untuk **Makna Consulting** — dibangun menggunakan Vue 3 dengan pendekatan modular, clean, dan scalable.
 
-about us
-https://www.hubspot.com/our-story
+---
 
-services
-https://nicepage.com/pd/6546567/smart-life-weekly-web-page-design
-ini sudah bagus dan lumayan masuk akal, tinggal ditambahin animasi saat scroll
+## ✨ Fitur Utama
 
-portofolio 
-ini simple aja soalnya isinya instansi apa aja yang udah percaya dan testimoni
+* 🎯 Hero slider interaktif
+* 🧩 Struktur modular (layout + pages)
+* 🧑‍💼 About dengan zig-zag layout
+* 🛠 Services (kategori + detail)
+* 📊 Portfolio dengan filter
+* 👨‍💻 Developer team (interactive card)
+* 📞 Contact multi-platform
+* 🤝 Trusted client (marquee logo)
+* 📱 Responsive design
 
-footer
-https://cdn.dribbble.com/userupload/17510011/file/original-1b85f224f0cd9ad07e521f69e171c70a.jpg?resize=400x0
+---
 
-## Recommended IDE Setup
+## 🛠 Tech Stack
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+| Tech         | Keterangan                         |
+| ------------ | ---------------------------------- |
+| Vue 3        | Composition API (`<script setup>`) |
+| Bootstrap 5  | Layout & responsive                |
+| Vue Router   | Routing                            |
+| Font Awesome | Icon                               |
 
-## Recommended Browser Setup
+---
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 📁 Struktur Project
 
-## Customize configuration
+```bash
+src/
+├── views/
+│   ├── layouts/
+│   │   ├── HomeLayout.vue
+│   │   └── FooterLayout.vue
+│   │
+│   └── pages/
+│       ├── HomeView.vue
+│       ├── AboutView.vue
+│       ├── ServiceView.vue
+│       ├── PortfolioView.vue
+│       ├── DeveloperView.vue
+│       └── ContactView.vue
+│
+├── router/
+│   └── index.js
+│
+└── App.vue
 
-See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
-
-```sh
-npm install
+public/
+└── images/
+    ├── PrimaryLogo/
+    │   └── Logo.png
+    │
+    ├── SecondaryLogo/
+    │   ├── 1.png
+    │   ├── 2.png
+    │   └── ...
+    │
+    └── Content/
+        └── (asset gambar konten)
 ```
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
+## ⚙️ Instalasi & Setup
+
+```bash
+# Clone repo
+git clone https://github.com/username/makna-consulting.git
+
+# Masuk folder
+cd makna-consulting
+
+# Install dependency
+npm install
+
+# Run dev server
 npm run dev
 ```
 
-### Compile and Minify for Production
+---
 
-```sh
-npm run build
+## 🧠 Arsitektur
+
+Project ini menggunakan pendekatan:
+
+### 1. Layout-based Structure
+
+* `layouts/` → komponen global (header, footer, dll)
+* `pages/` → halaman utama
+
+### 2. Section-based UI
+
+Setiap halaman dibangun dari section modular:
+
+```
+[page]-[section]-section
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+Contoh:
 
-```sh
-npm run lint
-```
+* `home-hero-section`
+* `service-detail-section`
+* `portfolio-grid-section`
+
+---
+
+## 🎨 Design System
+
+* 🎨 Primary color: `#ffc107`
+* 📦 Card-based layout
+* 📐 Bootstrap grid system
+* 💡 Clean & minimal UI
+
+---
+
+## 🔧 Best Practices
+
+* Scoped CSS (hindari konflik global)
+* Data-driven UI (loop & reactive state)
+* Konsistensi naming class
+* Struktur siap di-refactor ke component reusable
+
+---
+
+## 🚧 Roadmap / Improvement
+
+* [ ] Refactor ke reusable components (`Hero`, `Card`, dll)
+* [ ] Tambahkan animation (Vue Transition)
+* [ ] Lazy loading image
+* [ ] Integrasi API (dynamic data)
+* [ ] Cleanup interval (`onUnmounted`)
+* [ ] SEO optimization
+
+---
+
+## 🤝 Kontribusi
+
+1. Fork repository
+2. Buat branch (`feature/nama-fitur`)
+3. Commit perubahan
+4. Pull request
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## ⚡ Catatan Developer
+
+* Asset gambar disimpan di `public/images`
+* Logo client (trusted) auto-load dari folder `SecondaryLogo`
+* Struktur sudah disiapkan untuk scale ke project production
+
+---
+
+Kalau mau next upgrade:
+
+* aku bisa bantu bikin **README bilingual (Indonesia + English)** biar keliatan lebih global
+* atau setup **auto deploy Vercel dari GitHub (CI/CD)** biar tiap push langsung update 🚀
