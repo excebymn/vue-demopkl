@@ -1,7 +1,3 @@
-Berikut versi README yang sudah disesuaikan dengan struktur folder kamu + tanpa screenshot + tetap GitHub-ready:
-
----
-
 # 🚀 Makna Consulting Website
 
 ![Vue](https://img.shields.io/badge/Vue-3-42b883?logo=vue.js)
@@ -170,9 +166,3 @@ MIT License
 * Logo client (trusted) auto-load dari folder `SecondaryLogo`
 * Struktur sudah disiapkan untuk scale ke project production
 
----
-
-Kalau mau next upgrade:
-
-* aku bisa bantu bikin **README bilingual (Indonesia + English)** biar keliatan lebih global
-* atau setup **auto deploy Vercel dari GitHub (CI/CD)** biar tiap push langsung update 🚀
