@@ -1,9 +1,9 @@
-```html
 <template>
-  <!-- ===============================
-        HERO / HEADER
-  =============================== -->
-  <section class="py-5 text-center text-white" style="background:#ffc107;">
+
+  <!-- ========================= -->
+  <!-- HEADER / HERO SECTION -->
+  <!-- ========================= -->
+  <section class="contact-header-section py-5 text-center text-white" style="background:#ffc107;">
     <div class="container">
       <h1 class="fw-bold text-dark">Hubungi Kami</h1>
       <p class="text-dark">
@@ -12,10 +12,12 @@
     </div>
   </section>
 
-  <!-- ===============================
-        CONTACT OPTIONS
-  =============================== -->
-  <section class="container py-5">
+
+  <!-- ========================= -->
+  <!-- CONTACT OPTIONS SECTION -->
+  <!-- ========================= -->
+  <section class="contact-options-section container py-5">
+
     <div class="row g-4 justify-content-center">
 
       <!-- WhatsApp -->
@@ -63,14 +65,17 @@
       </div>
 
     </div>
+
   </section>
 
-  <!-- ===============================
-        EXTRA CTA
-  =============================== -->
-  <section class="py-5 text-center bg-light">
+
+  <!-- ========================= -->
+  <!-- CTA SECTION -->
+  <!-- ========================= -->
+  <section class="contact-cta-section py-5 text-center bg-light">
     <div class="container">
       <h2 class="fw-bold mb-3">Masih Bingung Mulai Dari Mana?</h2>
+
       <p class="text-muted mb-4">
         Tenang, kamu bisa langsung ngobrol santai dulu dengan kami
       </p>
@@ -80,12 +85,13 @@
       </a>
     </div>
   </section>
+
 </template>
 
 <style scoped>
-/* ===============================
-   CONTACT CARD
-=============================== */
+/* ========================= */
+/* CONTACT CARD */
+/* ========================= */
 .contact-card {
   transition: 0.3s;
   cursor: pointer;
@@ -93,8 +99,6 @@
 
 .contact-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 </style>
-```
-

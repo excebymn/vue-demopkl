@@ -1,8 +1,12 @@
-
 <script setup>
+// =========================
+// IMPORT
+// =========================
 import { ref } from 'vue'
 
-// Dummy data (nanti tinggal ganti)
+// =========================
+// DATA PROJECT
+// =========================
 const projects = ref([
   {
     title: 'Pelatihan SDM ASN',
@@ -13,7 +17,7 @@ const projects = ref([
   {
     title: 'Workshop Organisasi',
     category: 'Consulting',
-    image: '/images/Content/test.```html id="prtfl1"jpg',
+    image: '/images/Content/test.jpg',
     desc: 'Pendampingan pengembangan struktur dan budaya kerja organisasi.'
   },
   {
@@ -30,10 +34,19 @@ const projects = ref([
   }
 ])
 
+// =========================
+// STATE
+// =========================
 const activeFilter = ref('All')
 
+// =========================
+// CONSTANT
+// =========================
 const categories = ['All', 'Training', 'Consulting', 'System']
 
+// =========================
+// COMPUTED (FILTER)
+// =========================
 const filteredProjects = () => {
   if (activeFilter.value === 'All') return projects.value
   return projects.value.filter(p => p.category === activeFilter.value)
@@ -41,10 +54,11 @@ const filteredProjects = () => {
 </script>
 
 <template>
-  <!-- ===============================
-        HEADER
-  =============================== -->
-  <section class="py-5 text-center text-white" style="background:#ffc107;">
+
+  <!-- ========================= -->
+  <!-- HEADER SECTION -->
+  <!-- ========================= -->
+  <section class="portfolio-header-section py-5 text-center text-white" style="background:#ffc107;">
     <div class="container">
       <h1 class="fw-bold text-dark">Portofolio Kami</h1>
       <p class="text-dark">
@@ -53,10 +67,11 @@ const filteredProjects = () => {
     </div>
   </section>
 
-  <!-- ===============================
-        FILTER
-  =============================== -->
-  <section class="container py-4 text-center">
+
+  <!-- ========================= -->
+  <!-- FILTER SECTION -->
+  <!-- ========================= -->
+  <section class="portfolio-filter-section container py-4 text-center">
     <div class="d-flex flex-wrap justify-content-center gap-2">
       <button
         v-for="cat in categories"
@@ -70,10 +85,11 @@ const filteredProjects = () => {
     </div>
   </section>
 
-  <!-- ===============================
-        PORTFOLIO GRID
-  =============================== -->
-  <section class="container pb-5">
+
+  <!-- ========================= -->
+  <!-- PORTFOLIO GRID SECTION -->
+  <!-- ========================= -->
+  <section class="portfolio-grid-section container pb-5">
     <div class="row g-4">
 
       <div
@@ -115,136 +131,85 @@ const filteredProjects = () => {
 
     </div>
   </section>
-<h1>plis tambahin trust by disini bed</h1>
-<section class="container py-5">
-  <div class="text-center mb-5">
-    <h2 class="fw-bold">Dipercaya oleh Berbagai Instansi</h2>
-    <p class="text-muted">
-      Pengalaman kami mencakup berbagai sektor pemerintahan, BUMN, dan organisasi lainnya
-    </p>
-  </div>
 
-  <div class="row g-4">
 
-    <!-- LEFT -->
-    <div class="col-md-6">
+  <!-- ========================= -->
+  <!-- TRUST / CLIENT SECTION -->
+  <!-- ========================= -->
+  <section class="portfolio-trust-section container py-5">
 
-      <!-- SURVEY -->
-      <div class="mb-4">
-        <h6 class="fw-bold text-warning">Survey / SKM / SPPK / Publik</h6>
-        <ul class="small text-muted">
-          <li>Bagian Organisasi Bangkalan</li>
-          <li>Bagian Organisasi Kota Madiun</li>
-          <li>Biro Umum Provinsi Jawa Timur</li>
-          <li>Biro Administrasi Pembangunan Prov. Jatim</li>
-          <li>DPMPTSP Provinsi Jawa Timur</li>
-          <li>Dinas Kelautan dan Perikanan Prov. Jatim</li>
-          <li>Dinas Perindustrian Prov. Jatim</li>
-          <li>Dinas Perumahan Rakyat Prov. Jatim</li>
-          <li>Inspektorat Kota Madiun</li>
-          <li>RSUD Kota Madiun</li>
-          <li>RSUD Soegiri Lamongan</li>
-        </ul>
+    <!-- HEADER -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Dipercaya oleh Berbagai Instansi</h2>
+      <p class="text-muted">
+        Pengalaman kami mencakup berbagai sektor pemerintahan, BUMN, dan organisasi lainnya
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-md-6">
+
+        <!-- SURVEY -->
+        <div class="mb-4">
+          <h6 class="fw-bold text-warning">Survey / SKM / SPPK / Publik</h6>
+          <ul class="small text-muted">
+            <li>Bagian Organisasi Bangkalan</li>
+            <li>Bagian Organisasi Kota Madiun</li>
+            <li>Biro Umum Provinsi Jawa Timur</li>
+            <li>Biro Administrasi Pembangunan Prov. Jatim</li>
+            <li>DPMPTSP Provinsi Jawa Timur</li>
+          </ul>
+        </div>
+
+        <!-- SOP -->
+        <div class="mb-4">
+          <h6 class="fw-bold text-warning">Penyusunan SOP / SPM</h6>
+          <ul class="small text-muted">
+            <li>DPMPTSP Provinsi Jawa Timur</li>
+            <li>Biro Umum Provinsi Jawa Timur</li>
+            <li>Dinas Pertanian Kota Surabaya</li>
+          </ul>
+        </div>
+
       </div>
 
-      <!-- SOP -->
-      <div class="mb-4">
-        <h6 class="fw-bold text-warning">Penyusunan SOP / SPM</h6>
-        <ul class="small text-muted">
-          <li>DPMPTSP Provinsi Jawa Timur</li>
-          <li>Biro Umum Provinsi Jawa Timur</li>
-          <li>Dinas Pertanian Kota Surabaya</li>
-          <li>Dinas Ketahanan Pangan Surabaya</li>
-          <li>Disnaker Kota Surabaya</li>
-        </ul>
-      </div>
+      <!-- RIGHT COLUMN -->
+      <div class="col-md-6">
 
-      <!-- SDM -->
-      <div class="mb-4">
-        <h6 class="fw-bold text-warning">Peningkatan Kapasitas SDM</h6>
-        <ul class="small text-muted">
-          <li>Dinas Lingkungan Hidup Bojonegoro</li>
-          <li>DPRD Kota Probolinggo</li>
-          <li>DPMPTSP Kota Surabaya</li>
-          <li>Sekretariat DPRD Kab. Magetan</li>
-          <li>RSUD Dr. Soedono</li>
-          <li>Dinas Kesehatan Kab. Bangkalan</li>
-          <li>Kementerian Perhubungan Darat VIII</li>
-          <li>BKD Kab. Lamongan</li>
-          <li>Dispendukcapil Kab. Ngawi</li>
-          <li>Puskesmas Kab. Ngawi</li>
-        </ul>
+        <!-- ISO -->
+        <div class="mb-4">
+          <h6 class="fw-bold text-warning">Konsultansi SMM ISO 9001</h6>
+          <ul class="small text-muted">
+            <li>Bappeda Provinsi Sulawesi Selatan</li>
+            <li>DPMPTSP Kota Pasuruan</li>
+          </ul>
+        </div>
+
+        <!-- OUTBOUND -->
+        <div class="mb-4">
+          <h6 class="fw-bold text-warning">Outbound Training</h6>
+          <ul class="small text-muted">
+            <li>PT INKA (Persero)</li>
+            <li>Bank Jatim</li>
+          </ul>
+        </div>
+
       </div>
 
     </div>
 
-    <!-- RIGHT -->
-    <div class="col-md-6">
-
-      <!-- ISO -->
-      <div class="mb-4">
-        <h6 class="fw-bold text-warning">Konsultansi SMM ISO 9001</h6>
-        <ul class="small text-muted">
-          <li>Bappeda Provinsi Sulawesi Selatan</li>
-          <li>DPMPTSP Kota Pasuruan</li>
-          <li>DPMPTSP Kab. Magetan</li>
-          <li>Dispendukcapil Kab. Gresik</li>
-          <li>UPT BLK Lamongan</li>
-          <li>Sekretariat Daerah Kota Madiun</li>
-        </ul>
-      </div>
-
-      <!-- ANJAB -->
-      <div class="mb-4">
-        <h6 class="fw-bold text-warning">ANJAB / ABK / EVJAB / SKJ</h6>
-        <ul class="small text-muted">
-          <li>Bagian Organisasi Kab. Lebak</li>
-          <li>Bagian Organisasi Kab. Pandeglang</li>
-          <li>Bagian Organisasi Kab. Serang</li>
-          <li>Bagian Organisasi Kab. Probolinggo</li>
-          <li>Bagian Organisasi Kab. Bangkalan</li>
-          <li>Bagian Organisasi Kota Tangerang</li>
-        </ul>
-      </div>
-
-      <!-- OUTBOUND -->
-      <div class="mb-4">
-        <h6 class="fw-bold text-warning">Outbound Training</h6>
-        <ul class="small text-muted">
-          <li>PT INKA (Persero)</li>
-          <li>Bank Jatim</li>
-          <li>PT IMB (Jawa Timur 3)</li>
-          <li>PT EMDEE Beauty</li>
-          <li>RSUD Sidoarjo</li>
-          <li>Dispendukcapil Kab. Gresik</li>
-          <li>Instansi & organisasi lainnya</li>
-        </ul>
-      </div>
-
-      <!-- EVALUASI -->
-      <div class="mb-4">
-        <h6 class="fw-bold text-warning">Evaluasi Kelembagaan</h6>
-        <ul class="small text-muted">
-          <li>Kecamatan PD (Kab. Madiun)</li>
-          <li>Kecamatan PD (Kab. Probolinggo)</li>
-          <li>Bagian Organisasi Kota Madiun</li>
-          <li>Bagian Organisasi Kab. Bangkalan</li>
-        </ul>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-```
+  </section>
 
 
-  <!-- ===============================
-        CTA
-  =============================== -->
-  <section class="py-5 text-center bg-light">
+  <!-- ========================= -->
+  <!-- CTA SECTION -->
+  <!-- ========================= -->
+  <section class="portfolio-cta-section py-5 text-center bg-light">
     <div class="container">
       <h2 class="fw-bold mb-3">Tertarik Bekerja Sama?</h2>
+
       <p class="text-muted mb-4">
         Diskusikan kebutuhan Anda bersama tim kami
       </p>
@@ -254,12 +219,13 @@ const filteredProjects = () => {
       </router-link>
     </div>
   </section>
+
 </template>
 
 <style scoped>
-/* ===============================
-   HOVER EFFECT
-=============================== */
+/* ========================= */
+/* PORTFOLIO CARD */
+/* ========================= */
 .portfolio-card {
   transition: 0.3s;
   cursor: pointer;
@@ -267,7 +233,6 @@ const filteredProjects = () => {
 
 .portfolio-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 </style>
-```

@@ -1,16 +1,26 @@
 <template>
   <div>
-    <!-- HERO -->
-    <section class="bg-warning text-dark text-center py-5">
+
+    <!-- ========================= -->
+    <!-- HERO SECTION -->
+    <!-- ========================= -->
+    <section class="hero-section bg-warning text-dark text-center py-5">
       <div class="container">
         <h1 class="fw-bold">Makna Consulting</h1>
-        <p class="lead">Meningkatkan kapasitas SDM & tata kelola organisasi secara profesional</p>
+        <p class="lead">
+          Meningkatkan kapasitas SDM & tata kelola organisasi secara profesional
+        </p>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="py-5">
+
+    <!-- ========================= -->
+    <!-- ABOUT SECTION -->
+    <!-- ========================= -->
+    <section class="about-section py-5">
       <div class="container">
+
+        <!-- Tentang Kami -->
         <div class="row align-items-center mb-5">
           <div class="col-md-6">
             <img src="https://placehold.co/500x300" class="img-fluid rounded" />
@@ -24,6 +34,7 @@
           </div>
         </div>
 
+        <!-- Latar Belakang -->
         <div class="row align-items-center mb-5 flex-md-row-reverse">
           <div class="col-md-6">
             <img src="https://placehold.co/500x300" class="img-fluid rounded" />
@@ -37,6 +48,7 @@
           </div>
         </div>
 
+        <!-- Motivasi -->
         <div class="row align-items-center mb-5">
           <div class="col-md-6">
             <img src="https://placehold.co/500x300" class="img-fluid rounded" />
@@ -50,6 +62,7 @@
           </div>
         </div>
 
+        <!-- Nilai & Filosofi -->
         <div class="row align-items-center flex-md-row-reverse">
           <div class="col-md-6">
             <img src="https://placehold.co/500x300" class="img-fluid rounded" />
@@ -64,41 +77,55 @@
             </ul>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="bg-light py-5">
+
+    <!-- ========================= -->
+    <!-- SERVICES SECTION -->
+    <!-- ========================= -->
+    <section class="services-section bg-light py-5">
       <div class="container">
         <h2 class="text-center mb-4">Layanan Utama</h2>
+
         <div class="row text-center">
+
           <div class="col-md-4">
             <div class="card p-3">
               <h5>Peningkatan SDM</h5>
               <p>Pelatihan, workshop, dan pengembangan kompetensi.</p>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card p-3">
               <h5>Manajemen Pemerintahan</h5>
               <p>Konsultasi SOP, ISO, dan reformasi birokrasi.</p>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card p-3">
               <h5>Outbound & Event</h5>
               <p>Penyelenggaraan training, tour, dan team building.</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- TEAM -->
-    <section class="py-5">
+
+    <!-- ========================= -->
+    <!-- TEAM SECTION -->
+    <!-- ========================= -->
+    <section class="team-section py-5">
       <div class="container">
         <h2 class="text-center mb-4">Tim & Kepemimpinan</h2>
+
         <div class="row text-center">
+
           <div class="col-md-4">
             <div class="card p-3">
               <img src="https://placehold.co/150" class="rounded-circle mx-auto mb-3" />
@@ -106,6 +133,7 @@
               <p>Direktur</p>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card p-3">
               <img src="https://placehold.co/150" class="rounded-circle mx-auto mb-3" />
@@ -113,6 +141,7 @@
               <p>Trainer Senior</p>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card p-3">
               <img src="https://placehold.co/150" class="rounded-circle mx-auto mb-3" />
@@ -120,17 +149,22 @@
               <p>Consultant</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="bg-warning text-dark text-center py-5">
+
+    <!-- ========================= -->
+    <!-- CTA SECTION -->
+    <!-- ========================= -->
+    <section class="cta-section bg-warning text-dark text-center py-5">
       <div class="container">
         <h3>Siap Bekerja Sama Dengan Kami?</h3>
         <button class="btn btn-dark mt-3">Hubungi Kami</button>
       </div>
     </section>
+
   </div>
 </template>
 
@@ -138,10 +172,13 @@
 </script>
 
 <style>
+/* Card Styling */
 .card {
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Image Behavior */
 img {
   object-fit: cover;
 }
