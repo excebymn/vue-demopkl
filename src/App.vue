@@ -2,6 +2,7 @@
 // add template files
 import HeaderLayout from './views/layouts/headerLayout.vue'
 import FooterLayout from './views/layouts/footerLayout.vue'
+import FloatingButtons from './views/layouts/FloatingButtons.vue'
 import CallToActionLayout from './views/layouts/CallToActionLayout.vue'
 </script>
 
@@ -9,6 +10,7 @@ import CallToActionLayout from './views/layouts/CallToActionLayout.vue'
 <template>
   <HeaderLayout />
   <RouterView />
+  <FloatingButtons />
   <CallToActionLayout />
   <FooterLayout />
 </template>
