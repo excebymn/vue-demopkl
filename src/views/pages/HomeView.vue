@@ -17,9 +17,7 @@ import TestLogo from '/images/Content/test.jpg'
 // ===============================
 // TRUSTED LOGOS
 // ===============================
-const images = ref(
-  Array.from({ length: 30 }, (_, i) => `/images/SecondaryLogo/${i + 1}.png`)
-)
+const images = ref(Array.from({ length: 30 }, (_, i) => `/images/SecondaryLogo/${i + 1}.png`))
 
 // ===============================
 // HERO SLIDER STATE
@@ -45,31 +43,26 @@ const nextSlide = () => {
 }
 
 const prevSlide = () => {
-  currentSlide.value =
-    (currentSlide.value - 1 + heroSlides.length) % heroSlides.length
+  currentSlide.value = (currentSlide.value - 1 + heroSlides.length) % heroSlides.length
 }
 </script>
 
 <template>
-
   <!-- ========================= -->
   <!-- HERO SECTION (SLIDER) -->
   <!-- ========================= -->
   <section class="home-hero-section py-5 bg-light">
     <div class="container">
       <div class="row align-items-center g-4">
-
         <!-- TEXT -->
         <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
-          <h1 class="fw-bold display-5 mb-3 text-dark">
-            Solusi Memberi Arti
-          </h1>
+          <h1 class="fw-bold display-5 mb-3 text-dark">Solusi Memberi Arti</h1>
 
-          <p class="lead text-muted">
-            Mitra strategis pengembangan SDM & tata kelola instansi
-          </p>
+          <p class="lead text-muted">Mitra strategis pengembangan SDM & tata kelola instansi</p>
 
-          <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start">
+          <div
+            class="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start"
+          >
             <router-link to="/services" class="btn btn-warning px-4">
               Pelajari Layanan
             </router-link>
@@ -82,24 +75,20 @@ const prevSlide = () => {
 
         <!-- IMAGE SLIDER -->
         <div class="col-lg-6 order-1 order-lg-2 text-center position-relative">
-
           <!-- IMAGE -->
           <img
             :src="heroSlides[currentSlide]"
             class="img-fluid rounded shadow"
-            style="max-height: 400px; object-fit: cover;"
+            style="max-height: 400px; object-fit: cover"
           />
 
           <!-- NAVIGATION -->
           <button class="slider-btn left" @click="prevSlide">‹</button>
           <button class="slider-btn right" @click="nextSlide">›</button>
-
         </div>
-
       </div>
     </div>
   </section>
-
 
   <!-- ========================= -->
   <!-- ABOUT SECTION -->
@@ -114,7 +103,6 @@ const prevSlide = () => {
     </div>
   </section>
 
-
   <!-- ========================= -->
   <!-- SERVICES SECTION -->
   <!-- ========================= -->
@@ -122,47 +110,32 @@ const prevSlide = () => {
     <h2 class="fw-bold mb-4 text-center">Services</h2>
 
     <div class="row g-4">
-
       <div class="col-md-6 col-lg-4" v-for="i in 3" :key="i">
         <div class="card h-100 shadow-sm">
-
           <!-- IMAGE -->
-          <img
-            :src="TestLogo"
-            class="card-img-top"
-            style="height:200px; object-fit:cover;"
-          />
+          <img :src="TestLogo" class="card-img-top" style="height: 200px; object-fit: cover" />
 
           <!-- CONTENT -->
           <div class="card-body d-flex flex-column">
             <h5 class="fw-bold">Service {{ i }}</h5>
 
-            <p class="text-muted">
-              Deskripsi singkat layanan untuk menarik user.
-            </p>
+            <p class="text-muted">Deskripsi singkat layanan untuk menarik user.</p>
 
-            <router-link to="/services" class="btn btn-warning mt-auto">
-              Selengkapnya
-            </router-link>
+            <router-link to="/services" class="btn btn-warning mt-auto"> Selengkapnya </router-link>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
-
 
   <!-- ========================= -->
   <!-- WHY US SECTION -->
   <!-- ========================= -->
   <section class="home-why-section bg-light py-5">
     <div class="container text-center">
-
       <h2 class="fw-bold mb-3">Kenapa Makna Consulting?</h2>
 
       <div class="row g-4 mt-3">
-
         <div class="col-md-4">
           <div class="p-4 bg-white shadow rounded h-100">
             <i class="fa-solid fa-user-tie fa-2x mb-3 text-warning"></i>
@@ -186,23 +159,18 @@ const prevSlide = () => {
             <p class="text-muted">Fokus pada impact</p>
           </div>
         </div>
-
       </div>
-
     </div>
   </section>
-
 
   <!-- ========================= -->
   <!-- TRUSTED CLIENT SECTION -->
   <!-- ========================= -->
   <section class="home-trusted-section container py-4 bg-white">
-
     <p class="text-center fw-semibold">Dipercaya oleh:</p>
 
     <div class="marquee-wrapper">
       <div class="marquee-track">
-
         <!-- LOOP A -->
         <div v-for="(img, i) in images" :key="'a' + i" class="marquee-item">
           <img :src="img" />
@@ -212,38 +180,9 @@ const prevSlide = () => {
         <div v-for="(img, i) in images" :key="'b' + i" class="marquee-item">
           <img :src="img" />
         </div>
-
       </div>
     </div>
-
   </section>
-
-
-  <!-- ========================= -->
-  <!-- CTA SECTION -->
-  <!-- ========================= -->
-  <section class="home-cta-section py-5 text-center text-white" style="background:#ffc107;">
-    <div class="container">
-
-      <h2 class="fw-bold mb-3 text-dark">
-        Siap Meningkatkan SDM Anda?
-      </h2>
-
-      <p class="mb-4 text-dark">
-        Konsultasikan kebutuhan Anda sekarang
-      </p>
-
-      <router-link to="/contact" class="btn btn-dark me-2">
-        Hubungi Kami
-      </router-link>
-
-      <router-link to="/services" class="btn btn-outline-dark">
-        Lihat Layanan
-      </router-link>
-
-    </div>
-  </section>
-
 </template>
 
 <style scoped>
@@ -262,8 +201,12 @@ const prevSlide = () => {
   border-radius: 50%;
 }
 
-.slider-btn.left { left: 10px; }
-.slider-btn.right { right: 10px; }
+.slider-btn.left {
+  left: 10px;
+}
+.slider-btn.right {
+  right: 10px;
+}
 
 /* ========================= */
 /* MARQUEE */
@@ -293,7 +236,11 @@ const prevSlide = () => {
 /* ANIMATION */
 /* ========================= */
 @keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 </style>

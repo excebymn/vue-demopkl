@@ -28,63 +28,43 @@ const services = ref([
 
 <template>
   <div class="service-page">
-
-
     <!-- ========================= -->
     <!-- HERO SECTION -->
     <!-- ========================= -->
     <section class="service-hero-section py-5">
       <div class="container text-center">
         <h1 class="fw-bold">Layanan Kami</h1>
-        <p class="text-muted">
-          Solusi profesional untuk pengembangan SDM dan organisasi
-        </p>
+        <p class="text-muted">Solusi profesional untuk pengembangan SDM dan organisasi</p>
       </div>
     </section>
-
 
     <!-- ========================= -->
     <!-- CATEGORY SECTION -->
     <!-- ========================= -->
     <section class="service-category-section container py-5">
       <div class="row g-4">
-
-        <div
-          class="col-md-4"
-          v-for="(service, i) in services"
-          :key="i"
-        >
+        <div class="col-md-4" v-for="(service, i) in services" :key="i">
           <div class="card service-card h-100 p-3">
             <h5 class="fw-bold">{{ service.title }}</h5>
             <p class="text-muted">{{ service.desc }}</p>
           </div>
         </div>
-
       </div>
     </section>
-
 
     <!-- ========================= -->
     <!-- DETAIL ZIGZAG SECTION -->
     <!-- ========================= -->
     <section class="service-detail-section py-5">
       <div class="container">
-
         <div
           class="row align-items-center mb-5"
           v-for="(service, i) in services"
           :key="'detail' + i"
         >
-
           <!-- IMAGE -->
-          <div
-            class="col-md-6"
-            :class="{ 'order-md-2': i % 2 !== 0 }"
-          >
-            <img
-              src="https://placehold.co/500"
-              class="img-fluid rounded"
-            />
+          <div class="col-md-6" :class="{ 'order-md-2': i % 2 !== 0 }">
+            <img src="https://placehold.co/500" class="img-fluid rounded" />
           </div>
 
           <!-- TEXT -->
@@ -97,29 +77,9 @@ const services = ref([
               </li>
             </ul>
           </div>
-
         </div>
-
       </div>
     </section>
-
-
-    <!-- ========================= -->
-    <!-- CTA SECTION -->
-    <!-- ========================= -->
-    <section class="service-cta-section text-center py-5">
-      <div class="container">
-        <h2 class="fw-bold text-dark">
-          Siap bekerja sama dengan kami?
-        </h2>
-
-        <router-link to="/contact" class="btn btn-dark mt-3">
-          Hubungi Kami
-        </router-link>
-      </div>
-    </section>
-
-
   </div>
 </template>
 
@@ -156,12 +116,5 @@ const services = ref([
 /* ========================= */
 .service-detail-section {
   background: #f9f9f9;
-}
-
-/* ========================= */
-/* CTA */
-/* ========================= */
-.service-cta-section {
-  background: #ffc107;
 }
 </style>

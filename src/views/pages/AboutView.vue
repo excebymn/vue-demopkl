@@ -1,25 +1,20 @@
 <template>
   <div>
-
     <!-- ========================= -->
     <!-- HERO SECTION -->
     <!-- ========================= -->
     <section class="hero-section bg-warning text-dark text-center py-5">
       <div class="container">
         <h1 class="fw-bold">Makna Consulting</h1>
-        <p class="lead">
-          Meningkatkan kapasitas SDM & tata kelola organisasi secara profesional
-        </p>
+        <p class="lead">Meningkatkan kapasitas SDM & tata kelola organisasi secara profesional</p>
       </div>
     </section>
-
 
     <!-- ========================= -->
     <!-- ABOUT SECTION -->
     <!-- ========================= -->
     <section class="about-section py-5">
       <div class="container">
-
         <!-- Tentang Kami -->
         <div class="row align-items-center mb-5">
           <div class="col-md-6">
@@ -56,8 +51,8 @@
           <div class="col-md-6">
             <h2>Motivasi Kami</h2>
             <p>
-              Kami berkomitmen membantu organisasi berkembang melalui pelatihan dan konsultasi
-              yang berdampak nyata.
+              Kami berkomitmen membantu organisasi berkembang melalui pelatihan dan konsultasi yang
+              berdampak nyata.
             </p>
           </div>
         </div>
@@ -77,10 +72,8 @@
             </ul>
           </div>
         </div>
-
       </div>
     </section>
-
 
     <!-- ========================= -->
     <!-- SERVICES SECTION -->
@@ -90,7 +83,6 @@
         <h2 class="text-center mb-4">Layanan Utama</h2>
 
         <div class="row text-center">
-
           <div class="col-md-4">
             <div class="card p-3">
               <h5>Peningkatan SDM</h5>
@@ -111,11 +103,9 @@
               <p>Penyelenggaraan training, tour, dan team building.</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
 
     <!-- ========================= -->
     <!-- TEAM SECTION -->
@@ -125,7 +115,6 @@
         <h2 class="text-center mb-4">Tim & Kepemimpinan</h2>
 
         <div class="row text-center">
-
           <div class="col-md-4">
             <div class="card p-3">
               <img src="https://placehold.co/150" class="rounded-circle mx-auto mb-3" />
@@ -149,27 +138,11 @@
               <p>Consultant</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
-
-    <!-- ========================= -->
-    <!-- CTA SECTION -->
-    <!-- ========================= -->
-    <section class="cta-section bg-warning text-dark text-center py-5">
-      <div class="container">
-        <h3>Siap Bekerja Sama Dengan Kami?</h3>
-        <button class="btn btn-dark mt-3">Hubungi Kami</button>
-      </div>
-    </section>
-
   </div>
 </template>
-
-<script setup>
-</script>
 
 <style>
 /* Card Styling */

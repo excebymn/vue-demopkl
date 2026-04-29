@@ -9,8 +9,8 @@ import { ref } from 'vue'
 // =========================
 const team = ref([
   {
-    name: 'bimok',
-    role: 'terodok',
+    name: 'bima',
+    role: 'Leader',
     photo: '/images/Content/test.jpg',
     links: [
       { name: 'Instagram', url: '#' },
@@ -19,8 +19,8 @@ const team = ref([
     ],
   },
   {
-    name: 'ubed',
-    role: 'merodok',
+    name: 'abid',
+    role: 'Enginer',
     photo: '/images/Content/test.jpg',
     links: [
       { name: 'Instagram', url: '#' },
@@ -28,8 +28,8 @@ const team = ref([
     ],
   },
   {
-    name: 'yiff',
-    role: 'merekam',
+    name: 'syifa',
+    role: 'Designer',
     photo: '/images/Content/test.jpg',
     links: [
       { name: 'Instagram', url: '#' },

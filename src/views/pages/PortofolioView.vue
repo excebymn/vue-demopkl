@@ -12,26 +12,26 @@ const projects = ref([
     title: 'Pelatihan SDM ASN',
     category: 'Training',
     image: '/images/Content/test.jpg',
-    desc: 'Program peningkatan kompetensi pegawai dalam manajemen kerja modern.'
+    desc: 'Program peningkatan kompetensi pegawai dalam manajemen kerja modern.',
   },
   {
     title: 'Workshop Organisasi',
     category: 'Consulting',
     image: '/images/Content/test.jpg',
-    desc: 'Pendampingan pengembangan struktur dan budaya kerja organisasi.'
+    desc: 'Pendampingan pengembangan struktur dan budaya kerja organisasi.',
   },
   {
     title: 'Sistem Manajemen Kinerja',
     category: 'System',
     image: '/images/Content/test.jpg',
-    desc: 'Pengembangan sistem untuk monitoring dan evaluasi kinerja.'
+    desc: 'Pengembangan sistem untuk monitoring dan evaluasi kinerja.',
   },
   {
     title: 'Pelatihan Leadership',
     category: 'Training',
     image: '/images/Content/test.jpg',
-    desc: 'Pelatihan kepemimpinan untuk meningkatkan efektivitas tim.'
-  }
+    desc: 'Pelatihan kepemimpinan untuk meningkatkan efektivitas tim.',
+  },
 ])
 
 // =========================
@@ -49,24 +49,20 @@ const categories = ['All', 'Training', 'Consulting', 'System']
 // =========================
 const filteredProjects = () => {
   if (activeFilter.value === 'All') return projects.value
-  return projects.value.filter(p => p.category === activeFilter.value)
+  return projects.value.filter((p) => p.category === activeFilter.value)
 }
 </script>
 
 <template>
-
   <!-- ========================= -->
   <!-- HEADER SECTION -->
   <!-- ========================= -->
-  <section class="portfolio-header-section py-5 text-center text-white" style="background:#ffc107;">
+  <section class="portfolio-header-section py-5 text-center text-white" style="background: #ffc107">
     <div class="container">
       <h1 class="fw-bold text-dark">Portofolio Kami</h1>
-      <p class="text-dark">
-        Beberapa karya dan pengalaman yang telah kami kerjakan
-      </p>
+      <p class="text-dark">Beberapa karya dan pengalaman yang telah kami kerjakan</p>
     </div>
   </section>
-
 
   <!-- ========================= -->
   <!-- FILTER SECTION -->
@@ -85,26 +81,15 @@ const filteredProjects = () => {
     </div>
   </section>
 
-
   <!-- ========================= -->
   <!-- PORTFOLIO GRID SECTION -->
   <!-- ========================= -->
   <section class="portfolio-grid-section container pb-5">
     <div class="row g-4">
-
-      <div
-        class="col-md-6 col-lg-4"
-        v-for="(project, i) in filteredProjects()"
-        :key="i"
-      >
+      <div class="col-md-6 col-lg-4" v-for="(project, i) in filteredProjects()" :key="i">
         <div class="card h-100 shadow-sm border-0 portfolio-card">
-
           <!-- IMAGE -->
-          <img
-            :src="project.image"
-            class="card-img-top"
-            style="height:200px; object-fit:cover;"
-          />
+          <img :src="project.image" class="card-img-top" style="height: 200px; object-fit: cover" />
 
           <!-- CONTENT -->
           <div class="card-body d-flex flex-column">
@@ -121,23 +106,17 @@ const filteredProjects = () => {
               </span>
             </div>
 
-            <a href="#" class="btn btn-outline-warning mt-auto">
-              Lihat Detail
-            </a>
+            <a href="#" class="btn btn-outline-warning mt-auto"> Lihat Detail </a>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
-
 
   <!-- ========================= -->
   <!-- TRUST / CLIENT SECTION -->
   <!-- ========================= -->
   <section class="portfolio-trust-section container py-5">
-
     <!-- HEADER -->
     <div class="text-center mb-5">
       <h2 class="fw-bold">Dipercaya oleh Berbagai Instansi</h2>
@@ -147,10 +126,8 @@ const filteredProjects = () => {
     </div>
 
     <div class="row g-4">
-
       <!-- LEFT COLUMN -->
       <div class="col-md-6">
-
         <!-- SURVEY -->
         <div class="mb-4">
           <h6 class="fw-bold text-warning">Survey / SKM / SPPK / Publik</h6>
@@ -172,12 +149,10 @@ const filteredProjects = () => {
             <li>Dinas Pertanian Kota Surabaya</li>
           </ul>
         </div>
-
       </div>
 
       <!-- RIGHT COLUMN -->
       <div class="col-md-6">
-
         <!-- ISO -->
         <div class="mb-4">
           <h6 class="fw-bold text-warning">Konsultansi SMM ISO 9001</h6>
@@ -195,31 +170,9 @@ const filteredProjects = () => {
             <li>Bank Jatim</li>
           </ul>
         </div>
-
       </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ========================= -->
-  <!-- CTA SECTION -->
-  <!-- ========================= -->
-  <section class="portfolio-cta-section py-5 text-center bg-light">
-    <div class="container">
-      <h2 class="fw-bold mb-3">Tertarik Bekerja Sama?</h2>
-
-      <p class="text-muted mb-4">
-        Diskusikan kebutuhan Anda bersama tim kami
-      </p>
-
-      <router-link to="/contact" class="btn btn-warning px-4">
-        Hubungi Kami
-      </router-link>
     </div>
   </section>
-
 </template>
 
 <style scoped>
