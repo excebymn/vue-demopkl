@@ -2,7 +2,7 @@
   <section class="home-cta-section py-5 text-center text-white">
     <div class="container">
       <div class="cta-content mx-auto">
-        <h2 class="fw-bold mb-3 text-dark px-2">Siap Meningkatkan SDM Anda?</h2>
+        <h2 class="fw-bold mb-3 text-dark px-2">Lorem ipsum dolor sit, amet</h2>
 
         <p class="mb-4 text-dark px-2">Konsultasikan kebutuhan Anda sekarang</p>
 

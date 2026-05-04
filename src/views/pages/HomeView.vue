@@ -1,124 +1,138 @@
 <script setup>
-// ===============================
-// IMPORT
-// ===============================
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+
+const Hero2 = 'https://placehold.co/1600x800/orange/white'
 
 // ===============================
-// IMPORT ASSETS
+// HERO SLIDES (PAKAI LINK)
 // ===============================
-// Hero images (slider)
-import Hero1 from '/images/PrimaryLogo/Logo.png'
-import Hero2 from '/images/Content/test.jpg'
+const heroSlides = ref([
+  {
+    image: 'https://placehold.co/1600x800',
+    title: 'Solusi Memberi Arti',
+    desc: 'Mitra strategis pengembangan SDM & tata kelola instansi',
+  },
+  {
+    image: 'https://placehold.co/1600x800/black/blue',
+    title: 'Transformasi Digital',
+    desc: 'Meningkatkan efisiensi melalui teknologi',
+  },
+])
 
-// Dummy image
-import TestLogo from '/images/Content/test.jpg'
-
-// ===============================
-// TRUSTED LOGOS
-// ===============================
-const images = ref(Array.from({ length: 30 }, (_, i) => `/images/SecondaryLogo/${i + 1}.png`))
-
-// ===============================
-// HERO SLIDER STATE
-// ===============================
 const currentSlide = ref(0)
-const heroSlides = [Hero1, Hero2]
+let interval = null
 
-// ===============================
-// LIFECYCLE
-// ===============================
-// Auto slide tiap 5 detik
-onMounted(() => {
-  setInterval(() => {
-    currentSlide.value = (currentSlide.value + 1) % heroSlides.length
-  }, 5000)
-})
-
-// ===============================
-// METHODS
-// ===============================
 const nextSlide = () => {
-  currentSlide.value = (currentSlide.value + 1) % heroSlides.length
+  currentSlide.value = (currentSlide.value + 1) % heroSlides.value.length
 }
 
 const prevSlide = () => {
-  currentSlide.value = (currentSlide.value - 1 + heroSlides.length) % heroSlides.length
+  currentSlide.value = (currentSlide.value - 1 + heroSlides.value.length) % heroSlides.value.length
 }
+
+const goTo = (i) => {
+  currentSlide.value = i
+}
+
+onMounted(() => {
+  interval = setInterval(nextSlide, 5000)
+})
+
+onUnmounted(() => {
+  clearInterval(interval)
+})
+
+const images = ref(Array.from({ length: 30 }, (_, i) => `/images/SecondaryLogo/${i + 1}.png`))
+
+// duplicated track (biar looping seamless)
+const loopImages = computed(() => [...images.value, ...images.value])
+
+const TestLogo = Hero2
+
+const whyItems = [
+  {
+    title: 'Profesional',
+    desc: 'Tim berpengalaman',
+    icon: 'bi-person-badge',
+    link: '/services',
+  },
+  {
+    title: 'Terpercaya',
+    desc: 'Dipercaya banyak instansi',
+    icon: 'bi-building',
+    link: '/about',
+  },
+  {
+    title: 'Berorientasi Hasil',
+    desc: 'Fokus pada impact',
+    icon: 'bi-graph-up',
+    link: '/services',
+  },
+]
 </script>
 
 <template>
   <!-- ========================= -->
-  <!-- HERO SECTION (SLIDER) -->
+  <!-- HERO MICROSOFT STYLE -->
   <!-- ========================= -->
-  <section class="home-hero-section py-5 bg-light">
-    <div class="container">
-      <div class="row align-items-center g-4">
-        <!-- TEXT -->
-        <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
-          <h1 class="fw-bold display-5 mb-3 text-dark">Solusi Memberi Arti</h1>
+  <section class="hero" :style="{ backgroundImage: `url(${heroSlides[currentSlide].image})` }">
+    <!-- overlay biar text kebaca -->
+    <div class="overlay"></div>
 
-          <p class="lead text-muted">Mitra strategis pengembangan SDM & tata kelola instansi</p>
+    <div class="container hero-content">
+      <h1 class="text-white fw-bold display-4">
+        {{ heroSlides[currentSlide].title }}
+      </h1>
 
-          <div
-            class="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start"
-          >
-            <router-link to="/services" class="btn btn-warning px-4">
-              Pelajari Layanan
-            </router-link>
+      <p class="text-light lead">
+        {{ heroSlides[currentSlide].desc }}
+      </p>
 
-            <router-link to="/contact" class="btn btn-outline-warning px-4">
-              Hubungi Kami
-            </router-link>
-          </div>
-        </div>
+      <div class="d-flex gap-2">
+        <router-link to="/services" class="btn btn-warning"> Pelajari Layanan </router-link>
 
-        <!-- IMAGE SLIDER -->
-        <div class="col-lg-6 order-1 order-lg-2 text-center position-relative">
-          <!-- IMAGE -->
-          <img
-            :src="heroSlides[currentSlide]"
-            class="img-fluid rounded shadow"
-            style="max-height: 400px; object-fit: cover"
-          />
-
-          <!-- NAVIGATION -->
-          <button class="slider-btn left" @click="prevSlide">‹</button>
-          <button class="slider-btn right" @click="nextSlide">›</button>
-        </div>
+        <router-link to="/contact" class="btn btn-outline-light"> Hubungi Kami </router-link>
       </div>
+    </div>
+
+    <!-- NAV -->
+    <button class="nav left" @click="prevSlide">‹</button>
+    <button class="nav right" @click="nextSlide">›</button>
+
+    <!-- DOT -->
+    <div class="dots">
+      <span
+        v-for="(s, i) in heroSlides"
+        :key="i"
+        :class="{ active: i === currentSlide }"
+        @click="goTo(i)"
+      ></span>
     </div>
   </section>
 
   <!-- ========================= -->
-  <!-- ABOUT SECTION -->
+  <!-- SEMUA BAGIAN BAWAH TIDAK DIUBAH -->
   <!-- ========================= -->
+
   <section class="home-about-section container my-5">
     <div class="text-center mb-4">
       <h2 class="fw-bold text-uppercase">Makna Consulting</h2>
-
       <p class="text-muted">
         Solusi terpadu untuk meningkatkan kualitas SDM dan tata kelola organisasi
       </p>
     </div>
   </section>
 
-  <!-- ========================= -->
-  <!-- SERVICES SECTION -->
-  <!-- ========================= -->
   <section class="home-services-section container py-5">
     <h2 class="fw-bold mb-4 text-center">Services</h2>
 
     <div class="row g-4">
       <div class="col-md-6 col-lg-4" v-for="i in 3" :key="i">
         <div class="card h-100 shadow-sm">
-          <!-- IMAGE -->
           <img :src="TestLogo" class="card-img-top" style="height: 200px; object-fit: cover" />
 
-          <!-- CONTENT -->
           <div class="card-body d-flex flex-column">
             <h5 class="fw-bold">Service {{ i }}</h5>
-
             <p class="text-muted">Deskripsi singkat layanan untuk menarik user.</p>
 
             <router-link to="/services" class="btn btn-warning mt-auto"> Selengkapnya </router-link>
@@ -128,56 +142,29 @@ const prevSlide = () => {
     </div>
   </section>
 
-  <!-- ========================= -->
-  <!-- WHY US SECTION -->
-  <!-- ========================= -->
   <section class="home-why-section bg-light py-5">
     <div class="container text-center">
       <h2 class="fw-bold mb-3">Kenapa Makna Consulting?</h2>
 
       <div class="row g-4 mt-3">
-        <div class="col-md-4">
-          <div class="p-4 bg-white shadow rounded h-100">
-            <i class="fa-solid fa-user-tie fa-2x mb-3 text-warning"></i>
-            <h5>Profesional</h5>
-            <p class="text-muted">Tim berpengalaman</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="p-4 bg-white shadow rounded h-100">
-            <i class="fa-solid fa-building fa-2x mb-3 text-warning"></i>
-            <h5>Terpercaya</h5>
-            <p class="text-muted">Dipercaya banyak instansi</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="p-4 bg-white shadow rounded h-100">
-            <i class="fa-solid fa-chart-line fa-2x mb-3 text-warning"></i>
-            <h5>Berorientasi Hasil</h5>
-            <p class="text-muted">Fokus pada impact</p>
-          </div>
+        <div class="col-md-4" v-for="(item, index) in whyItems" :key="index">
+          <router-link :to="item.link" class="text-decoration-none">
+            <div class="p-4 bg-white shadow rounded h-100 why-card">
+              <i :class="['bi', item.icon, 'fs-1', 'mb-3', 'text-warning']"></i>
+              <h5 class="text-dark">{{ item.title }}</h5>
+              <p class="text-muted">{{ item.desc }}</p>
+            </div>
+          </router-link>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================= -->
-  <!-- TRUSTED CLIENT SECTION -->
-  <!-- ========================= -->
   <section class="home-trusted-section container py-4 bg-white">
     <p class="text-center fw-semibold">Dipercaya oleh:</p>
-
     <div class="marquee-wrapper">
       <div class="marquee-track">
-        <!-- LOOP A -->
-        <div v-for="(img, i) in images" :key="'a' + i" class="marquee-item">
-          <img :src="img" />
-        </div>
-
-        <!-- LOOP B (duplicate for infinite scroll) -->
-        <div v-for="(img, i) in images" :key="'b' + i" class="marquee-item">
+        <div v-for="(img, i) in loopImages" :key="i" class="marquee-item">
           <img :src="img" />
         </div>
       </div>
@@ -186,60 +173,159 @@ const prevSlide = () => {
 </template>
 
 <style scoped>
-/* ========================= */
-/* SLIDER BUTTON */
-/* ========================= */
-.slider-btn {
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+
+  height: 70vh;
+  min-height: 400px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+}
+
+/* content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+
+  text-align: left;
+  margin-left: 80px;
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-content {
+    padding-left: 40px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero-content {
+    padding-left: 0;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+/* NAV */
+.nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   border: none;
-  padding: 10px 15px;
-  cursor: pointer;
+  padding: 10px 14px;
   border-radius: 50%;
+  z-index: 2;
 }
 
-.slider-btn.left {
-  left: 10px;
+.nav.left {
+  left: 20px;
 }
-.slider-btn.right {
-  right: 10px;
+.nav.right {
+  right: 20px;
 }
 
-/* ========================= */
+/* DOT */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots span.active {
+  background: white;
+}
+
 /* MARQUEE */
-/* ========================= */
 .marquee-wrapper {
   overflow: hidden;
+  padding: 14px 0; /* ruang atas bawah */
 }
 
 .marquee-track {
   display: flex;
-  animation: scroll 20s linear infinite;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+  gap: 16px;
+  align-items: center;
 }
 
+.marquee-item {
+  flex: 0 0 auto;
+  padding: 0;
+}
+
+/* pause saat hover */
 .marquee-wrapper:hover .marquee-track {
   animation-play-state: paused;
 }
 
 .marquee-item {
-  margin-right: 20px;
+  flex: 0 0 auto;
+  position: relative;
+
+  height: 45px; /* penting: lebih besar dari img */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.3s ease;
+}
+
+.marquee-item:hover {
+  transform: scale(1.2);
+  z-index: 10;
 }
 
 .marquee-item img {
-  height: 50px;
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
-/* ========================= */
-/* ANIMATION */
-/* ========================= */
-@keyframes scroll {
-  from {
+.marquee-item:hover img {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+/* KEYFRAME FIX */
+@keyframes marquee {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }

@@ -5,10 +5,10 @@ import Logo from '/images/PrimaryLogo/Logo.png'
 // DATA
 // ===============================
 const socials = [
-  { icon: 'fa-google', link: 'https://google.com' },
-  { icon: 'fa-facebook-f', link: '#' },
-  { icon: 'fa-instagram', link: '#' },
-  { icon: 'fa-tiktok', link: '#' },
+  { icon: 'bi-google', link: 'https://google.com' },
+  { icon: 'bi-facebook', link: '#' },
+  { icon: 'bi-instagram', link: '#' },
+  { icon: 'bi-tiktok', link: '#' },
 ]
 
 const pages = [
@@ -36,7 +36,7 @@ const pages = [
             :href="s.link"
             class="social-link"
           >
-            <i :class="['fab', s.icon]"></i>
+            <i :class="['bi', s.icon]"></i>
           </a>
         </div>
       </div>
